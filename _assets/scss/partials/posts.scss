@@ -1,0 +1,151 @@
+.home-section {
+  display: flex;
+  flex-direction: column;
+  gap: 42px;
+
+  .post-list--item {
+    .post-cover {
+      position: relative;
+      width: 100%;
+      margin-bottom: 12px;
+  
+      &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba($color: #000000, $alpha: 0.2);
+      }
+  
+      img {
+        display: block;
+        width: 100%;
+        max-width: 100%;
+      }
+    }
+  
+    .post-title {
+      display: inline-block;
+      font-weight: bolder;
+      font-size: var(--font-stress-size);
+    }
+  
+    .post-time {
+      color: var(--theme-text-low);
+      font-family: var(--time-font);
+    }
+  }
+}
+
+.tags-section {
+
+  .tags-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+  
+  .tags-item {
+    font-size: var(--font-common-size);
+    font-weight: bolder;
+    transition: transitions((color));
+    
+    &:hover {
+      color: var(--theme-text-active);
+    }
+  }
+}
+
+.posts-section {
+
+  .posts-table {
+    width: 100%;
+  }
+
+  .post-time {
+    width: 110px;
+    color: var(--theme-text-low);
+    font-family: var(--time-font);
+  }
+
+  .post-title {
+    display: inline-block;
+    font-size: var(--font-common-size);
+  }
+}
+
+.post-section {
+
+  .post-time {
+    color: var(--theme-text-low);
+    font-family: var(--time-font);
+    font-weight: bolder;
+  }
+
+  .post-content {
+    @import "./partials/markdown.scss";
+  }
+
+  .post-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+
+    a {
+      color: var(--theme-text-link);
+      transition: transitions(color);
+      font-weight: bolder;
+
+      &::before {
+        content: "#";
+        margin-right: 3px;
+      }
+
+      &:hover {
+        color: var(--theme-text-active);
+      }
+    }
+  }
+
+  .post-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    font-weight: bolder;
+    color: var(--theme-text-primary);
+
+    a {
+      color: var(--theme-text-link);
+      transition: transitions(color);
+
+      &:hover {
+        color: var(--theme-text-active);
+      }
+    }
+  }
+}
+
+.links-section {
+  .links-item:not(:last-child) {
+    margin-bottom: 18px;
+  }
+
+  .links-title {
+    font-size: var(--font-common-size);
+
+    a {
+      color: var(--theme-text-link);
+      transition: transitions(color);
+
+      &:hover {
+        color: var(--theme-text-active);
+      }
+    }
+  }
+
+  .links-description {
+    color: var(--theme-text-low);
+  }
+}

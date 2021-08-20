@@ -1,0 +1,92 @@
+/** light theme */
+$light-bg-primary: #f5f8fa;
+$light-bg-stress: #F8F8F8;
+
+$light-text-active: #5C527F;
+$light-text-link: #6E85B2;
+$light-text-light: #ffffff;
+$light-text-primary: #3e3e5f;
+$light-text-low: #aeacb1;
+$light-text-stress: #14281D;
+
+$light-border-primary: #e1e4e8;
+$light-border-secondary: #ebedef;
+
+
+/** dark theme */
+$dark-bg-primary: #1e2428;
+$dark-bg-stress: #303438;
+
+$dark-text-active: #5C527F;
+$dark-text-link: #6E85B2;
+$dark-text-light: #d7dfe6;
+$dark-text-primary: #adbac7;
+$dark-text-low: #444c56;
+$dark-text-stress: #cdd9e5;
+
+$dark-border-primary: #444c56;
+$dark-border-secondary: #373e47;
+
+:root.theme-light {
+  --theme-bg-primary: #{$light-bg-primary};
+  --theme-bg-stress: #{$light-bg-stress};
+
+  --theme-text-active: #{$light-text-active};
+  --theme-text-link: #{$light-text-link};
+  --theme-text-light: #{$light-text-light};
+  --theme-text-primary: #{$light-text-primary};
+  --theme-text-low: #{$light-text-low};
+  --theme-text-stress: #{$light-text-stress};
+
+  --theme-border-primary: #{$light-border-primary};
+  --theme-border-secondary: #{$light-border-secondary};
+}
+
+:root.theme-dark {
+  --theme-bg-primary: #{$dark-bg-primary};
+  --theme-bg-stress: #{$dark-bg-stress};
+
+  --theme-text-active: #{$dark-text-active};
+  --theme-text-link: #{$dark-text-link};
+  --theme-text-light: #{$dark-text-light};
+  --theme-text-primary: #{$dark-text-primary};
+  --theme-text-low: #{$dark-text-low};
+  --theme-text-stress: #{$dark-text-stress};
+  
+  --theme-border-primary: #{$dark-border-primary};
+  --theme-border-secondary: #{$dark-border-secondary};
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --theme-bg-primary: #{$light-bg-primary};
+    --theme-bg-stress: #{$light-bg-stress};
+
+    --theme-text-active: #{$light-text-active};
+    --theme-text-link: #{$light-text-link};
+    --theme-text-light: #{$light-text-light};
+    --theme-text-primary: #{$light-text-primary};
+    --theme-text-low: #{$light-text-low};
+    --theme-text-stress: #{$light-text-stress};
+
+    --theme-border-primary: #{$light-border-primary};
+    --theme-border-secondary: #{$light-border-secondary};
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --theme-bg-primary: #{$dark-bg-primary};
+    --theme-bg-stress: #{$dark-bg-stress};
+
+    --theme-text-active: #{$dark-text-active};
+    --theme-text-link: #{$dark-text-link};
+    --theme-text-light: #{$dark-text-light};
+    --theme-text-primary: #{$dark-text-primary};
+    --theme-text-low: #{$dark-text-low};
+    --theme-text-stress: #{$dark-text-stress};
+  
+    --theme-border-primary: #{$dark-border-primary};
+    --theme-border-secondary: #{$dark-border-secondary};
+  }
+}

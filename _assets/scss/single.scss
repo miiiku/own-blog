@@ -1,0 +1,97 @@
+@import './base/index.scss';
+
+.root {
+  position: relative;
+  background-color: #bd0104;
+  background-image: url('/images/bg.jpeg');
+  background-size: 150%;
+  background-position: 50% 50%;
+  transition: all 0.4s ease;
+}
+
+.kanban-container {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-20%);
+}
+
+.body-container {
+  max-width: 860px;
+  min-height: 100vh;
+  width: 80%;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.dialog-box {
+  width: 100%;
+  position: relative;
+
+  .dialog-wrapper {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    // clip-path: polygon(14px 14px, 100% 5px, calc(100% - 18px) calc(100% - 5px), 0 calc(100% - 9px));
+    clip-path: polygon(15px 15px, calc(100% - 1px) 6px, calc(100% - 19px) calc(100% - 6px), 1px calc(100% - 10px));
+    background-color: #000000;
+    transform: scale(1.005, 1.02);
+  }
+
+  .dialog-content {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    clip-path: polygon(15px 15px, calc(100% - 1px) 6px, calc(100% - 19px) calc(100% - 6px), 1px calc(100% - 10px));
+    background-color: #ffffff;
+  }
+
+  .dialog-inner {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    clip-path: polygon(25px 25px, calc(100% - 20px) 20px, calc(100% - 25px) calc(100% - 14px), 5px calc(100% - 14px));
+    background-color: #000000;
+  }
+
+  [class^=dialog-arrow--] {
+    position: absolute;
+    width: 120px;
+    height: 60px;
+    right: 100%;
+    bottom: 28%;
+
+    &.dialog-arrow--wrapper {
+      transform: scale(1.05, 1.2) translateX(30px);
+      background-color: #000000;
+      clip-path: path("m0.83344,29.48437l78.508523,-20.15105l4.958439,11.33331c0.165384,0.15109 35.866148,-9.51556 35.866148,-9.51556c0,0 -5.619559,29.33328 -5.784953,29.18219c0.165394,0.15109 -46.774508,12.4844 -46.939892,12.33331c0.165384,0.15109 -26.940751,-21.84887 -27.106145,-21.99996l-39.171559,-1.51557z");
+    }
+
+    &.dialog-arrow--inner {
+      transform: translateX(30px);
+      background-color: #ffffff;
+      clip-path: path("m0.83344,29.48437l78.508523,-20.15105l4.958439,11.33331c0.165384,0.15109 35.866148,-9.51556 35.866148,-9.51556c0,0 -5.619559,29.33328 -5.784953,29.18219c0.165394,0.15109 -46.774508,12.4844 -46.939892,12.33331c0.165384,0.15109 -26.940751,-21.84887 -27.106145,-21.99996l-39.171559,-1.51557z");
+
+      &::before {
+        width: 100%;
+        height: 100%;
+        left: 0;
+        top: 0;
+        position: absolute;
+        content: "";
+        clip-path: path("m1.6875,29.056641c-0.125,0 74.375,-16.875 74.3125,-16.931641c0.0625,0.056641 4.9375,12.931641 4.9375,12.931641c0,0 34.25,-7.125 34.1875,-7.181641c0.0625,0.056641 -5.5625,20.556641 -5.625,20.5c0.0625,0.056641 -42.9375,8.431641 -43,8.375c0.0625,0.056641 -26.1875,-19.693359 -26.25,-19.75c0.0625,0.056641 -38.4375,2.056641 -38.5625,2.056641z");
+        background-color: #000000;
+      }
+    }
+  }
+
+  .single-markdown {
+    position: relative;
+    color: #fbf8f9;
+    padding: 60px;
+    font-size: 16px;
+    font-weight: bolder;
+  }
+}

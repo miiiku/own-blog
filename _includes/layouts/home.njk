@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="{{ metadata.language }}">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    {%- if metadata.author %}
+    <meta name="author" content="{{ metadata.author.name }}">
+    {% endif %}
+
+    {%- if metadata.keywords %}
+    <meta name="keywords" content="{{ metadata.keywords | join(',') }}">
+    {% endif %}
+
+    {%- if metadata.description %}
+    <meta name="description" content="{{ metadata.description }}">
+    {% endif %}
+
+    <title>{{ title or metadata.title }}</title>
+
+    <link href="{{ '/style/home.css' | url }}" rel="stylesheet">
+    <link rel="alternate" href="{{ metadata.feed.path | url }}" type="application/atom+xml" title="{{ metadata.title }}">
+    <link rel="alternate" href="{{ metadata.jsonfeed.path | url }}" type="application/json" title="{{ metadata.title }}">
+  </head>
+  <body>
+    <div class="root">
+      <header class="header-container margin-y">
+        <div class="title-content">
+          <h1 class="title-h1">{{ metadata.title }}</h1>
+        </div>
+        <nav class="nav-content">
+          {%- for nav in navigation %}
+          <a class="nav-content--item" href="{{ nav.url | url }}">{{ nav.title }}</a>
+          {%- endfor %}
+        </nav>
+      </header>
+
+      <div class="banner-container margin-y">
+        <div class="banner-img">
+          <img src="{{ metadata.banner.url }}" alt="{{ metadata.title }}">
+        </div>
+        {% if metadata.banner.title %}
+        <p class="banner-text">{{ metadata.banner.title }}</p>
+        {% endif %}
+      </div>
+
+      <main class="posts-container margin-y">
+        <div class="post-list">
+          {% for post in collections.posts | reverse | head(5) %}
+          <section class="post-list--item">
+            <div class="post-content">
+              <a href="{{ post.url | url }}">
+                <h2 class="post-title">{{ post.data.title }}</h2>
+              </a>
+            </div>
+          </section>
+          {% endfor %}
+        </div>
+      </main>
+
+      <div class="home-kanban"></div>
+    </div>
+  </body>
+</html>
+
+

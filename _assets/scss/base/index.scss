@@ -1,0 +1,51 @@
+@import './base/var.scss';
+@import './base/theme.scss';
+@import './base/reset.scss';
+@import './base/mixin.scss';
+
+body {
+  background-color: var(--theme-bg-primary);
+  transition: transitions(background-color, 0.3s);
+  font: var(--base-font);
+  color: var(--theme-text-primary);
+}
+
+.text-ellipsis {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.center-bg {
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.padding {
+  padding: var(--content-primary-padding);
+}
+
+.padding-x {
+  padding-left: var(--content-primary-padding);
+  padding-right: var(--content-primary-padding);
+}
+
+.padding-y {
+  padding-top: var(--content-primary-padding);
+  padding-bottom: var(--content-primary-padding);
+}
+
+.margin {
+  margin: var(--content-primary-padding);
+}
+
+.margin-x {
+  margin-left: var(--content-primary-padding);
+  margin-right: var(--content-primary-padding);
+}
+
+.margin-y {
+  margin-top: var(--content-primary-padding);
+  margin-bottom: var(--content-primary-padding);
+}

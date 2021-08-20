@@ -1,0 +1,17 @@
+<section class="layout-side">
+  <nav class="side-nav">
+    {%- for entry in navigation %}
+    <a class="nav-item{% if entry.url === page.url %} nav-item--active{% endif %}" href="{{ entry.url | url }}">
+      {{ entry.title }}
+    </a>
+    {%- endfor %}
+  </nav>
+  <div class="side-banner">
+    <div class="side-banner--img">
+      <img src="{{ metadata.banner.url }}" alt="{{ metadata.title }}">
+    </div>
+    {% if metadata.banner.title %}
+    <p class="side-banner--text">{{ metadata.banner.title }}</p>
+    {% endif %}
+  </div>
+</section>

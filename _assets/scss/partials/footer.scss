@@ -1,0 +1,37 @@
+.section-footer {
+  flex-grow: 0;
+  flex-shrink: 0;
+  text-align: right;
+  padding: var(--content-primary-padding);
+
+  .footer-content {
+    background-image: linear-gradient(
+      to right,
+      var(--theme-border-primary) 0%,
+      var(--theme-border-primary) 20%,
+      transparent 20%,
+      transparent 80%,
+      var(--theme-border-primary) 80%,
+      var(--theme-border-primary) 100%,
+    );
+    background-size: 28px 3px;
+    background-position: center top;
+    background-repeat: repeat-x;
+    font-weight: bolder;
+    color: var(--theme-text-low);
+
+    .footer-title {
+      text-transform: uppercase;
+      padding-top: var(--content-primary-padding);
+      font-size: var(--font-stress-size);
+    }
+
+    a {
+      transition: transitions(color);
+
+      &:hover {
+        color: var(--theme-text-stress);
+      }
+    }
+  }
+}

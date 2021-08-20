@@ -1,0 +1,19 @@
+---
+title: ともだち
+layout: layouts/base.njk
+templateClass: tmpl-links
+permalink: /links/
+---
+
+<div class="links-section">
+  <ul class="links-list">
+    {% for link in links %}
+    <li class="links-item">
+      <div class="links-title"><a href="{{ link.link | url }}" target="_blank" rel="noopener noreferrer">{{ link.name }}</a></div>
+      {% if link.description %}
+        <div class="links-description">{{ link.description }}</div>
+      {% endif %}
+    </li>
+    {% endfor%}
+  </ul>
+</div>

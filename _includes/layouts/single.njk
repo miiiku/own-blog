@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="{{ metadata.language }}">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    {%- if metadata.author %}
+    <meta name="author" content="{{ metadata.author.name }}">
+    {% endif %}
+
+    {%- if metadata.keywords %}
+    <meta name="keywords" content="{{ metadata.keywords | join(',') }}">
+    {% endif %}
+
+    {%- if metadata.description %}
+    <meta name="description" content="{{ metadata.description }}">
+    {% endif %}
+
+    <title>{{ title or metadata.title }}</title>
+
+    <link href="{{ '/style/single.css' | url }}" rel="stylesheet">
+    <link href="https://unpkg.com/prismjs@1.20.0/themes/prism-okaidia.css" rel="stylesheet">
+
+    <link rel="alternate" href="{{ metadata.feed.path | url }}" type="application/atom+xml" title="{{ metadata.title }}">
+    <link rel="alternate" href="{{ metadata.jsonfeed.path | url }}" type="application/json" title="{{ metadata.title }}">
+  </head>
+  <body>
+    <div class="root">
+      <div class="kanban-container">
+        <img src="/images/kanban.png" />
+      </div>
+      <main class="body-container">
+        <div class="dialog-box">
+          <div class="dialog-wrapper"></div>
+          <div class="dialog-arrow--wrapper"></div>
+          <div class="dialog-content"></div>
+          <div class="dialog-arrow--inner"></div>
+          <div class="dialog-inner"></div>
+          <div class="single-markdown">
+            <p>正面には見事に忘れられた校長がいて、全員が学校の規則を守っています。</p>
+            <p>校長としての黒と白のクマに対する暴力は禁止されています。 監視カメラへの損傷はありません</p>
+            <p>校長としての黒と白のクマに対する暴力は禁止されています。 監視カメラへの損傷はありません</p>
+          </div>
+        </div>
+      </main>
+    </div>
+  </body>
+</html>

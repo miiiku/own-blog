@@ -1,0 +1,19 @@
+@mixin mq-pc {
+  @media #{$mq-pc} {
+    @content;
+  }
+};
+
+@mixin mq-mb {
+  @media #{$mq-mb} {
+    @content;
+  }
+};
+
+@function transitions ($attribute, $duration: 0.3s) {
+  $return: null;
+  @each $var in $attribute {
+    $return: $return , #{$var} #{$duration} ease-out
+  }
+  @return $return
+};

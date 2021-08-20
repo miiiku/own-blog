@@ -1,0 +1,32 @@
+{
+  "name": "hiyori",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "serve": "npx @11ty/eleventy --serve",
+    "debug": "DEBUG=* npx @11ty/eleventy",
+    "watch": "npx @11ty/eleventy --watch"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@11ty/eleventy": "^0.12.1",
+    "@11ty/eleventy-plugin-syntaxhighlight": "^3.1.2",
+    "dayjs": "^1.10.6",
+    "debug": "^4.3.2",
+    "gulp": "^4.0.2",
+    "gulp-autoprefixer": "^8.0.0",
+    "gulp-sass": "^5.0.0",
+    "gulp-typescript": "^6.0.0-alpha.1",
+    "js-yaml": "^4.1.0",
+    "markdown-it": "^12.2.0",
+    "markdown-it-container": "^3.0.0",
+    "markdown-it-emoji": "^2.0.0",
+    "sass": "^1.37.5",
+    "slugify": "^1.6.0",
+    "typescript": "^4.3.5"
+  },
+  "dependencies": {}
+}

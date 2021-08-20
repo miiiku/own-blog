@@ -1,0 +1,36 @@
+---
+layout: layouts/base.njk
+templateClass: tmpl-post
+---
+
+<div class="post-section">
+  <div class="post-time">
+    <time datetime="{{ date | htmlDate }}">{{ date | textDate }}</time>
+  </div>
+
+  <div class="post-content margin-y">
+    {{ content | safe }}
+  </div>
+
+  {% if tags %}
+  <div class="post-tags margin-y">
+    {% for tag in tags %}
+      {% set tagUrl %}/tags/{{ tag | slugify }}/{% endset %}
+      <a href="{{ tagUrl | url }}">{{ tag }}</a>
+    {% endfor %}
+  </div>
+  {% endif %}
+
+  {% set previousPost = collections.posts | getPreviousCollectionItem(page) %}
+  {% set nextPost = collections.posts | getNextCollectionItem(page) %}
+  {% if previousPost or nextPost %}
+  <div class="post-nav margin-y">
+    {% if nextPost %}
+      <div>上一篇: <a href="{{ nextPost.url }}">{{ nextPost.data.title }}</a></div>
+    {% endif %}
+    {% if previousPost %}
+      <div>下一篇: <a href="{{ previousPost.url }}">{{ previousPost.data.title }}</a></div>
+    {% endif %}
+  </div>
+  {% endif %}
+</div>

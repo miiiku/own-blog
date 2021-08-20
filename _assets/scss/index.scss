@@ -1,0 +1,38 @@
+
+@import './base/index.scss';
+@import './partials/side.scss';
+@import './partials/sticky.scss';
+@import './partials/pagination.scss';
+@import './partials/footer.scss';
+@import './partials/posts.scss';
+
+.root {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  overflow: hidden;
+
+  .side-container {
+    width: var(--layout-side-width);
+    max-width: var(--layout-side-width);
+    height: 100%;
+  }
+
+  .body-container {
+    flex: 1;
+    overflow-y: auto;
+  }
+
+  .scroll-view {
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+  }
+
+  .section-main {
+    width: var(--layout-main-width);
+    max-width: var(--layout-main-max-width);
+    margin: auto;
+    flex: 1;
+  }
+}

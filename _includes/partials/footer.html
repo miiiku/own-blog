@@ -1,0 +1,23 @@
+<footer class="section-footer">
+  <div class="footer-content">
+    <h2 class="footer-title">{{ metadata.title }}</h2>
+  
+    {%- if metadata.author %}
+    <p><a href="{{ metadata.author.url }}" target="_blank" rel="noopener noreferrer author">© 2021 {{ metadata.author.name }}</a></p>
+    {% endif %}
+  
+    {%- if metadata.beian %}
+    <p><a href="http://www.miitbeian.gov.cn" target="_blank" rel="noopener noreferrer">{{ metadata.beian }}</a></p>
+    {% endif %}
+  
+    {%- if metadata.hitokoto %}
+    <p>{{ metadata.hitokoto }}</p>
+    {% endif %}
+
+    <p>
+      <a href="javascript:;" id="theme-light">🌞 light</a>
+      <a href="javascript:;" id="theme-dark">🌛 dark</a>
+      <a href="javascript:;" id="theme-auto">🤖️ auto</a>
+    </p>
+  </div>
+</footer>

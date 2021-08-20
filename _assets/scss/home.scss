@@ -1,0 +1,116 @@
+@import './base/index.scss';
+
+.root {
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+.home-kanban {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-image: url('/images/home.png');
+  background-repeat: no-repeat;
+  background-position: right 50px bottom 1px;
+  background-size: 40%;
+  pointer-events: none;
+}
+
+.header-container {
+  flex-shrink: 0;
+  padding: 0 60px;
+
+  .title-content {
+    background-image: linear-gradient(var(--theme-border-primary) ,var(--theme-border-primary));
+    background-size: 380px 2px;
+    background-repeat: no-repeat;
+    background-position: left bottom;
+
+    .title-h1 {
+      font-size: var(--font-large-size);
+      font-weight: bolder;
+      text-transform: uppercase;
+    }
+  }
+
+  .nav-content {
+    padding-top: var(--content-primary-padding);
+    display: flex;
+    gap: 32px;
+
+    .nav-content--item {
+      font-size: var(--font-common-size);
+      color: var(--theme-text-link);
+      transition: all 0.3s ease;
+
+      &:hover {
+        color: var(--theme-text-active);
+      }
+    }
+  }
+}
+
+.banner-container {
+  flex-shrink: 0;
+  position: relative;
+  width: 100%;
+  height: 360px;
+  min-height: 360px;
+  overflow: hidden;
+
+  .banner-img {
+    position: relative;
+    width: 100%;
+    height: 100%;
+
+    img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba($color: #000000, $alpha: 0.2);
+    }
+  }
+
+  .banner-text {
+    position: absolute;
+    bottom: 30px;
+    left: 60px;
+    color: var(--theme-text-light);
+    font-size: var(--font-common-size);
+    font-weight: bolder;
+  }
+}
+
+.posts-container {
+  flex: 1;
+  padding: 0 60px;
+
+  .post-list--item {
+    margin-bottom: 12px;
+
+    .post-title {
+      display: inline-block;
+      color: var(--theme-text-link);
+      transition: color 0.3s ease;
+
+      &:hover {
+        color: var(--theme-text-active);
+      }
+    }
+  }
+}
