@@ -6,7 +6,7 @@
   "scripts": {
     "serve": "npx @11ty/eleventy --serve",
     "debug": "DEBUG=* npx @11ty/eleventy",
-    "watch": "npx @11ty/eleventy --watch"
+    "clean": "rm -rf _site"
   },
   "keywords": [],
   "author": "",

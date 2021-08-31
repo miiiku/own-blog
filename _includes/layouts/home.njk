@@ -37,10 +37,10 @@
 
       <div class="banner-container margin-y">
         <div class="banner-img">
-          <img src="{{ metadata.banner.url }}" alt="{{ metadata.title }}">
+          <img src="{{ metadata.homeBanner.url }}" alt="{{ metadata.title }}">
         </div>
-        {% if metadata.banner.title %}
-        <p class="banner-text">{{ metadata.banner.title }}</p>
+        {% if metadata.homeBanner.title %}
+        <p class="banner-text">{{ metadata.homeBanner.title }}</p>
         {% endif %}
       </div>
 
@@ -58,8 +58,11 @@
         </div>
       </main>
 
-      <div class="home-kanban"></div>
+      <div class="kanban-container"></div>
     </div>
+
+    <script src="/script/utils.js"></script>
+    <script src="/script/home.js"></script>
   </body>
 </html>
 

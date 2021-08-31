@@ -1,5 +1,13 @@
 @import './base/index.scss';
 
+:root {
+  --kanban-offset-x: 0;
+  --kanban-offset-y: 0;
+
+  --banner-offset-x: 0;
+  --banner-offset-y: 0;
+}
+
 .root {
   display: flex;
   flex-direction: column;
@@ -8,7 +16,7 @@
   overflow: hidden;
 }
 
-.home-kanban {
+.kanban-container {
   position: fixed;
   top: 0;
   left: 0;
@@ -16,9 +24,16 @@
   height: 100vh;
   background-image: url('/images/home.png');
   background-repeat: no-repeat;
-  background-position: right 50px bottom 1px;
+  background-position:
+    right calc(50px + var(--kanban-offset-x) * 25px)
+    bottom calc(-5px + var(--kanban-offset-y) * 5px);
   background-size: 40%;
   pointer-events: none;
+  transition: background-position 0.3s ease;
+
+  &.moving {
+    transition: none;
+  }
 }
 
 .header-container {
@@ -30,11 +45,26 @@
     background-size: 380px 2px;
     background-repeat: no-repeat;
     background-position: left bottom;
+    background: var(--theme-bg-primary);
 
     .title-h1 {
+      position: relative;
+      width: fit-content;
       font-size: var(--font-large-size);
       font-weight: bolder;
       text-transform: uppercase;
+      user-select: none;
+
+      &::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(45deg, var(--theme-bg-primary) 0%, var(--theme-bg-primary) 25%, transparent 25%, transparent 50%, var(--theme-bg-primary) 50%, var(--theme-bg-primary) 75%, transparent 75%, transparent 100%);
+        background-size: 6px 6px;
+      }
     }
   }
 
@@ -44,12 +74,34 @@
     gap: 32px;
 
     .nav-content--item {
+      position: relative;
       font-size: var(--font-common-size);
       color: var(--theme-text-link);
       transition: all 0.3s ease;
+      line-height: 1.4;
+      padding: 0 12px;
+
+      &::before {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        content: "";
+        width: 100%;
+        height: 100%;
+        transform: scaleX(0.1);
+        transform-origin: 0 center;
+        transition: transform 0.3s ease;
+        background-color: var(--theme-text-link);
+        z-index: -1;
+      }
 
       &:hover {
-        color: var(--theme-text-active);
+        color: var(--theme-text-stress);
+
+        &::before {
+          transform: scaleX(1);
+        }
       }
     }
   }
@@ -63,26 +115,33 @@
   min-height: 360px;
   overflow: hidden;
 
+  &.moving {
+    .banner-img, .banner-text {
+      transition: none;
+    }
+  }
+
   .banner-img {
-    position: relative;
-    width: 100%;
-    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.3s ease;
+    transform: translate3d(
+      calc(var(--banner-offset-x) * 20px),
+      calc(var(--banner-offset-y) * 60px), 0);
 
     img {
-      display: block;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-
-    &::after {
-      content: '';
       position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-color: rgba($color: #000000, $alpha: 0.2);
+      display: block;
+      width: 120%;
+      height: 120%;
+      max-width: 120%;
+      object-fit: cover;
     }
   }
 
@@ -90,9 +149,14 @@
     position: absolute;
     bottom: 30px;
     left: 60px;
-    color: var(--theme-text-light);
-    font-size: var(--font-common-size);
+    color: #f1f1f1;
     font-weight: bolder;
+    font-size: var(--font-common-size);
+    pointer-events: none;
+    transition: transform 0.3s ease;
+    transform: translate3d(
+      calc(var(--banner-offset-x) * 15px),
+      calc(var(--banner-offset-y) * 15px), 0);
   }
 }
 
@@ -104,12 +168,31 @@
     margin-bottom: 12px;
 
     .post-title {
-      display: inline-block;
+      position: relative;
+      width: fit-content;
       color: var(--theme-text-link);
       transition: color 0.3s ease;
 
+      &::after {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        content: "";
+        width: 100%;
+        height: 2px;
+        transform: scaleX(0);
+        transition: transform 0.45s ease;
+        background-color: var(--theme-text-link);
+        transform-origin: 100% 0;
+      }
+
       &:hover {
         color: var(--theme-text-active);
+
+        &::after {
+          transform: scaleX(1);
+          transform-origin: 0 0;
+        }
       }
     }
   }

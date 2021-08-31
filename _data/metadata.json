@@ -1,8 +1,8 @@
 {
   "url": "https://example.com/",
-  "title": "just because",
+  "title": "Danganronpa",
   "hitokoto": "Get set, go!",
-  "keywords": ["hiyori", "个人博客", "不见鹿", "鹿角", "桔梗", "主题"],
+  "keywords": ["hiyori", "个人博客", "鹿角", "主题"],
   "description": "喜欢下雨闻到的泥土味，喜欢下雨带来的丝丝凉意，喜欢窝在被窝听着窗外啪嗒啪嗒的声音，喜欢被雨冲刷以后的这个世界",
   "language": "zh-CN",
   "author": {
@@ -11,9 +11,14 @@
     "url": "https://sukoshi.xyz",
     "avatar": "https://s.gravatar.com/avatar/7b5a0b07a98895278cfa862b1f32ae8f?s=200&r=g&d=retro"
   },
-  "banner": {
-    "url": "/images/banner.jpeg",
-    "title": "呀嘞呀嘞 诶多诶多 米娜桑 ~",
+  "homeBanner": {
+    "url": "/images/home-banner.jpeg",
+    "title": "「开始」是结束的开始",
+    "origin": "https://sukoshi.xyz"
+  },
+  "siderBanner": {
+    "url": "/images/sider-banner.jpeg",
+    "title": "我晒干了沉默 毁的很冲动",
     "origin": "https://sukoshi.xyz"
   },
   "beian": "蜀ICP备15014309号"
