@@ -1,7 +1,7 @@
-<section class="layout-side">
+<section class="side-content">
   <nav class="side-nav">
     {%- for entry in navigation %}
-    <a class="nav-item{% if entry.url === page.url %} nav-item--active{% endif %}" href="{{ entry.url | url }}">
+    <a class="nav-item{% if entry.url === page.url %} nav-item--active{% endif %}" href="{{ entry.url | url }}" data-text="{{ entry.title }}" >
       {{ entry.title }}
     </a>
     {%- endfor %}

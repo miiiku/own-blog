@@ -1,10 +1,14 @@
 
 @import './base/index.scss';
-@import './partials/side.scss';
-@import './partials/sticky.scss';
-@import './partials/pagination.scss';
-@import './partials/footer.scss';
 @import './partials/posts.scss';
+
+:root {
+  --layout-side-width: 45%;
+  --layout-main-width: 680px;
+  --layout-main-max-width: 80%;
+  --sticky-height-defalut: 180px;
+  --sticky-height-active: 48px;
+}
 
 .root {
   width: 100vw;
@@ -16,6 +20,139 @@
     width: var(--layout-side-width);
     max-width: var(--layout-side-width);
     height: 100%;
+
+    .side-content {
+      width: 100%;
+      height: 100%;
+      display: flex;
+    
+      .side-nav {
+        width: 30%;
+        min-width: 120px;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-evenly;
+    
+        .nav-item {
+          position: relative;
+          padding-left: 9px;
+          padding-right: 3px;
+          letter-spacing: 6px;
+          text-transform: uppercase;
+          font-weight: bolder;
+          font-size: var(--font-stress-size);
+          color: var(--theme-text-link);
+          line-height: var(--font-base-lh);
+          transition: transitions((color, border-color));
+
+          &::before, &::after {
+            display: block;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            width: 100%;
+          }
+
+          &::before {
+            height: 6px;
+            background-color: var(--theme-text-link);
+            content: "";
+            transition: transitions(height);
+          }
+
+          &::after {
+            width: 100%;
+            height: 100%;
+            padding-left: 9px;
+            padding-right: 3px;
+            letter-spacing: 6px;
+            content: attr(data-text);
+            color: transparent;
+            background-image: linear-gradient(to right,  var(--theme-text-stress),  var(--theme-text-stress));
+            -webkit-background-clip: text;
+            background-size: 100% 0%;
+            background-repeat: no-repeat;
+            background-position: center bottom;
+            transition: transitions(background-size);
+          }
+    
+          &:hover, &--active {
+            &::before {
+              height: 50%;
+            }
+            &::after {
+              background-size: 100% 50%;
+            }
+          }
+        }
+      }
+    
+      .side-banner {
+        --offsetX: 0;
+        --offsetY: 0;
+    
+        flex: 1;
+        position: relative;
+        overflow: hidden;
+    
+        &::after {
+          content: "";
+          display: block;
+          width: 100%;
+          height: 100%;
+          position: absolute;
+          top: 0;
+          left: 0;
+          background-color: rgba($color: #000000, $alpha: 0.2);
+        }
+    
+        &.active {
+          .side-banner--img, .side-banner--text {
+            transition: transform 0.3s ease;
+          }
+        }
+    
+        .side-banner--img {
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          transform: translate3d(
+            calc(var(--offsetX) * 50px),
+            calc(var(--offsetY) * 20px), 0);
+    
+          img {
+            position: absolute;
+            display: block;
+            width: 130%;
+            height: 130%;
+            max-width: 130%;
+            object-fit: cover;
+          }
+        }
+    
+        .side-banner--text {
+          position: absolute;
+          bottom: 10%;
+          left: 30px;
+          color: #f1f1f1;
+          font-weight: bolder;
+          font-size: var(--font-common-size);
+          pointer-events: none;
+          transform: translate3d(
+            calc(var(--offsetX) * 15px),
+            calc(var(--offsetY) * 15px), 0);
+          z-index: 2;
+        }
+      }
+    }
   }
 
   .body-container {
@@ -23,16 +160,120 @@
     overflow-y: auto;
   }
 
+  /** 右侧滚动区域 */
   .scroll-view {
     display: flex;
     flex-direction: column;
     min-height: 100%;
   }
 
+  /** 右侧顶部标题区域 */
+  .section-header {
+    width: 100%;
+    min-height: var(--sticky-height-defalut);
+    flex-grow: 0;
+    flex-shrink: 0;
+  
+    &.actice {
+      position: sticky;
+      top: 0;
+      z-index: 999;
+    }
+  
+    .sticky-content {
+      height: 100%;
+      overflow: hidden;
+  
+      background-color: transparent;
+      border-bottom: 1px solid transparent;
+      font-size: var(--font-large-size);
+      letter-spacing: 8px;
+    }
+  
+    .sticky-inner {
+      display: flex;
+      align-items: center;
+      width: 680px;
+      max-width: 80%;
+      height: 100%;
+      margin: auto;
+      overflow: hidden;
+    }
+  
+    .sticky-title {
+      width: 100%;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+  }
+
+  /** 右侧主要内容区域 */
   .section-main {
     width: var(--layout-main-width);
     max-width: var(--layout-main-max-width);
     margin: auto;
     flex: 1;
+
+    .pagination-container {
+      padding: var(--content-primary-padding) 0;
+    }
+    
+    .pagination-content {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      gap: 36px;
+      width: 680px;
+      max-width: 80%;
+    
+      font-weight: bolder;
+      font-family: var(--time-font);
+      font-size: var(--font-common-size);
+    
+      span {
+        color: var(--theme-text-low);
+      }
+    
+      svg {
+        display: block;
+        width: 20px;
+        height: 20px;
+        fill: var(--theme-text-primary);
+      }
+    }
+  }
+
+  /** 右侧底部区域 */
+  .section-footer {
+    flex-grow: 0;
+    flex-shrink: 0;
+    text-align: right;
+    padding: var(--content-primary-padding);
+  
+    .footer-content {
+      background:
+        radial-gradient(circle at 10px -7px, transparent 8px, var(--theme-border-primary) 8px, var(--theme-border-primary) 10px, transparent 10px) repeat-x,
+        radial-gradient(circle at 10px 27px, transparent 8px, var(--theme-border-primary) 8px, var(--theme-border-primary) 10px, transparent 10px) repeat-x;
+      background-size: 20px 20px;
+      // background-position: -10px calc(100% + 16px), 0 calc(100% - 4px);
+      background-position: 0 10px, -10px -9px;
+
+      font-weight: bolder;
+      color: var(--theme-text-low);
+  
+      .footer-title {
+        text-transform: uppercase;
+        padding-top: var(--content-primary-padding);
+        font-size: var(--font-stress-size);
+      }
+  
+      a {
+        transition: transitions(color);
+  
+        &:hover {
+          color: var(--theme-text-stress);
+        }
+      }
+    }
   }
 }

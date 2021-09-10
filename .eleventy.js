@@ -7,11 +7,13 @@ const markdownItEmoji = require("markdown-it-emoji");
 const markdownItContainer = require("markdown-it-container")
 const { buildStyle, buildScript } = require('./gulpfile');
 
-const defaultRenderLink = markdownIt.renderer.rules.link_open || function(tokens, idx, options, env, self) {
+const defaultRender = function(tokens, idx, options, env, self) {
   return self.renderToken(tokens, idx, options, env, self);
 };
 
-const defaultRenderImage = markdownIt.renderer.rules.image;
+const defaultRenderLink = markdownIt.renderer.rules.link_open || defaultRender;
+
+const defaultRenderImage = markdownIt.renderer.rules.image || defaultRender;
 
 markdownIt.renderer.rules.link_open = function (tokens, idx, options, env, self) {
   tokens[idx].attrPush(['target', '_blank']);
@@ -50,6 +52,8 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addWatchTarget("_assets/scss/");
   eleventyConfig.addWatchTarget("_assets/ts/");
 
+  // move public source
+  eleventyConfig.addPassthroughCopy({ "public": "/" })
   // move assets/images
   eleventyConfig.addPassthroughCopy({ "_assets/images": "images" });
 
@@ -80,12 +84,8 @@ module.exports = function(eleventyConfig) {
   });
 
   eleventyConfig.addFilter("head", (array, n) => {
-    if(!Array.isArray(array) || array.length === 0) {
-      return [];
-    }
-    if( n < 0 ) {
-      return array.slice(n);
-    }
+    if(!Array.isArray(array) || array.length === 0) return [];
+    if( n < 0 ) return array.slice(n);
     return array.slice(0, n);
   });
 

@@ -3,13 +3,6 @@
 @import './base/reset.scss';
 @import './base/mixin.scss';
 
-body {
-  background-color: var(--theme-bg-primary);
-  transition: transitions(background-color, 0.3s);
-  font: var(--base-font);
-  color: var(--theme-text-primary);
-}
-
 .text-ellipsis {
   overflow: hidden;
   text-overflow: ellipsis;

@@ -1,6 +1,7 @@
 /** light theme */
 $light-bg-primary: #f5f8fa;
 $light-bg-stress: #F8F8F8;
+$light-bg-nav: #FFFFFF;
 
 $light-text-active: #5C527F;
 $light-text-link: #6E85B2;
@@ -16,6 +17,7 @@ $light-border-secondary: #ebedef;
 /** dark theme */
 $dark-bg-primary: #222831;
 $dark-bg-stress: #222831;
+$dark-bg-nav: #1F252D;
 
 $dark-text-active: #CF5475;
 $dark-text-link: #F05454;
@@ -24,12 +26,13 @@ $dark-text-primary: #BEBEBE;
 $dark-text-low: #B4A5A5;
 $dark-text-stress: #EAEAEA;
 
-$dark-border-primary: #444c56;
+$dark-border-primary: #2E3642;
 $dark-border-secondary: #373e47;
 
 :root.theme-light {
   --theme-bg-primary: #{$light-bg-primary};
   --theme-bg-stress: #{$light-bg-stress};
+  --theme-bg-nav: #{$light-bg-nav};
 
   --theme-text-active: #{$light-text-active};
   --theme-text-link: #{$light-text-link};
@@ -45,6 +48,7 @@ $dark-border-secondary: #373e47;
 :root.theme-dark {
   --theme-bg-primary: #{$dark-bg-primary};
   --theme-bg-stress: #{$dark-bg-stress};
+  --theme-bg-nav: #{$dark-bg-nav};
 
   --theme-text-active: #{$dark-text-active};
   --theme-text-link: #{$dark-text-link};
@@ -61,6 +65,7 @@ $dark-border-secondary: #373e47;
   :root {
     --theme-bg-primary: #{$light-bg-primary};
     --theme-bg-stress: #{$light-bg-stress};
+    --theme-bg-nav: #{$light-bg-nav};
 
     --theme-text-active: #{$light-text-active};
     --theme-text-link: #{$light-text-link};
@@ -78,6 +83,7 @@ $dark-border-secondary: #373e47;
   :root {
     --theme-bg-primary: #{$dark-bg-primary};
     --theme-bg-stress: #{$dark-bg-stress};
+    --theme-bg-nav: #{$dark-bg-nav};
 
     --theme-text-active: #{$dark-text-active};
     --theme-text-link: #{$dark-text-link};

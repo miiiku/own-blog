@@ -76,6 +76,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
   function initStickyAnimation (dom:Element, from:number, to:number, duration: number): KeyframeEffect {
     const style             = getComputedStyle(document.documentElement)
+    const themeBGColor      = style.getPropertyValue("--theme-bg-nav")
     const themeBorderColor  = style.getPropertyValue("--theme-border-primary")
     const fontLargeSize     = style.getPropertyValue("--font-large-size")
     const fontCommonSize    = style.getPropertyValue("--font-common-size")
@@ -91,7 +92,7 @@ window.addEventListener('DOMContentLoaded', () => {
         },
         {
           height: toPX(to),
-          backgroundColor: '#ffffff',
+          backgroundColor: themeBGColor,
           borderColor: themeBorderColor,
           fontSize: fontCommonSize,
           letterSpacing: '4px'

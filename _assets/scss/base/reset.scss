@@ -13,14 +13,15 @@ menu, nav, output, ruby, section, summary, time, mark, audio, video {
 
 html {
   box-sizing: border-box;
-  font: var(--base-font);
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
 }
 
 body {
-  font-size: 14px;
-  line-height: 1;
+  font: var(--font-base-size) / var(--font-base-lh) var(--base-font);
+  color: var(--theme-text-primary);
+  background-color: var(--theme-bg-primary);
+  transition: transitions(background-color, 0.3s);
 }
 
 *, *:before, *:after {
