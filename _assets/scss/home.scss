@@ -92,7 +92,10 @@
         transform: scaleX(0.1);
         transform-origin: 0 center;
         transition: transform 0.3s ease;
-        background-color: var(--theme-text-link);
+        background-image: var(--theme-border-svg);
+        background-repeat: no-repeat;
+        background-position: center left;
+        background-size: 172%;
         z-index: -1;
       }
 
@@ -167,6 +170,11 @@
   .post-list--item {
     margin-bottom: 12px;
 
+    a {
+      display: block;
+      width: fit-content;
+    }
+
     .post-title {
       position: relative;
       width: fit-content;
@@ -179,20 +187,10 @@
         left: 0;
         content: "";
         width: 100%;
-        height: 2px;
-        transform: scaleX(0);
-        transition: transform 0.45s ease;
-        background-color: var(--theme-text-link);
-        transform-origin: 100% 0;
-      }
-
-      &:hover {
-        color: var(--theme-text-active);
-
-        &::after {
-          transform: scaleX(1);
-          transform-origin: 0 0;
-        }
+        height: 6px;
+        background-image: var(--theme-border-svg);
+        background-repeat: repeat-x;
+        background-size: contain;
       }
     }
   }

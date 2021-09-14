@@ -13,13 +13,15 @@ $light-text-stress: #14281D;
 $light-border-primary: #e1e4e8;
 $light-border-secondary: #ebedef;
 
+$light-border-svg: url("/images/border-light.svg");
+
 
 /** dark theme */
 $dark-bg-primary: #222831;
 $dark-bg-stress: #222831;
 $dark-bg-nav: #1F252D;
 
-$dark-text-active: #CF5475;
+$dark-text-active: #EB1616;
 $dark-text-link: #F05454;
 $dark-text-light: #d7dfe6;
 $dark-text-primary: #BEBEBE;
@@ -28,6 +30,8 @@ $dark-text-stress: #EAEAEA;
 
 $dark-border-primary: #2E3642;
 $dark-border-secondary: #373e47;
+
+$dark-border-svg: url("/images/border-dark.svg");
 
 :root.theme-light {
   --theme-bg-primary: #{$light-bg-primary};
@@ -43,6 +47,8 @@ $dark-border-secondary: #373e47;
 
   --theme-border-primary: #{$light-border-primary};
   --theme-border-secondary: #{$light-border-secondary};
+
+  --theme-border-svg: #{$light-border-svg};
 }
 
 :root.theme-dark {
@@ -59,6 +65,8 @@ $dark-border-secondary: #373e47;
   
   --theme-border-primary: #{$dark-border-primary};
   --theme-border-secondary: #{$dark-border-secondary};
+
+  --theme-border-svg: #{$dark-border-svg};
 }
 
 @media (prefers-color-scheme: light) {
@@ -76,6 +84,8 @@ $dark-border-secondary: #373e47;
 
     --theme-border-primary: #{$light-border-primary};
     --theme-border-secondary: #{$light-border-secondary};
+
+    --theme-border-svg: #{$light-border-svg};
   }
 }
 
@@ -94,5 +104,7 @@ $dark-border-secondary: #373e47;
   
     --theme-border-primary: #{$dark-border-primary};
     --theme-border-secondary: #{$dark-border-secondary};
+
+    --theme-border-svg: #{$dark-border-svg};
   }
 }

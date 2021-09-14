@@ -58,7 +58,9 @@
 
           &::before {
             height: 6px;
-            background-color: var(--theme-text-link);
+            background-image: var(--theme-border-svg);
+            background-repeat: repeat-x;
+            background-size: contain;
             content: "";
             transition: transitions(height);
           }
