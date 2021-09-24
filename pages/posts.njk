@@ -17,9 +17,7 @@ pagination:
         <time datetime="{{ post.date | htmlDate }}">{{ post.date | textDate }}</time>
       </td>
       <td class="post-title">
-        <a href="{{ post.url | url }}">
-          <h2>{{ post.data.title }}</h2>
-        </a>
+        <a href="{{ post.url | url }}">{{ post.data.title }}</a>
       </td>
     </tr>
     {% endfor %}

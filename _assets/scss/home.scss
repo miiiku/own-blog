@@ -48,6 +48,7 @@
     background: var(--theme-bg-primary);
 
     .title-h1 {
+      margin: 0;
       position: relative;
       width: fit-content;
       font-size: var(--font-large-size);
@@ -75,6 +76,7 @@
 
     .nav-content--item {
       position: relative;
+      font-weight: bolder;
       font-size: var(--font-common-size);
       color: var(--theme-text-link);
       transition: all 0.3s ease;
@@ -168,7 +170,6 @@
   padding: 0 60px;
 
   .post-list--item {
-    margin-bottom: 12px;
 
     a {
       display: block;

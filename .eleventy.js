@@ -89,6 +89,11 @@ module.exports = function(eleventyConfig) {
     return array.slice(0, n);
   });
 
+  eleventyConfig.addFilter("routerMatch", (path, url) => {
+    if (path === '/') return path === url
+    return url.startsWith(path)
+  });
+
   eleventyConfig.setLibrary('md', markdownIt.use(markdownItEmoji).use(markdownItContainer, "tip"));
 
   eleventyConfig.on('beforeBuild', () => {

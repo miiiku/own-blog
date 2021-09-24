@@ -12,7 +12,7 @@
   {
     "key": "Taxono",
     "title": "标签",
-    "url": "/taxonos/"
+    "url": "/tags/"
   },
   {
     "key": "About",
@@ -23,6 +23,11 @@
     "key": "links",
     "title": "友链",
     "url": "/links/"
+  },
+  {
+    "key": "Frames",
+    "title": "截屏",
+    "url": "/frames/"
   },
   {
     "key": "Full",

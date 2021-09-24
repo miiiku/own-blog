@@ -1,15 +1,15 @@
 ---
 title: 标签
-permalink: /taxonos/
+permalink: /tags/
 layout: layouts/base.njk
-templateClass: tmpl-taxonos
+templateClass: tmpl-tags
 ---
 
 <div class="tags-section">
   <div class="tags-list">
   {% for key, tag in collections %}
     {% if key !== 'all' and key !== 'posts' %}
-      <a class="tags-item" href="/tags/{{ key }}">{{ key }}【{{ tag | length }}】</a>
+      <a class="tags-item" href="/tags/{{ key | slugify }}">{{ key }}【{{ tag | length }}】</a>
     {% endif %}
   {% endfor%}
   </div>

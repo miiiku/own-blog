@@ -9,7 +9,7 @@ const enum THEME_ENUM {
 const toPX = (n:number):string => n + 'px'
 
 /** querys to array */
-const querySelectorArrs = (selector:string):Array<Element> => Array.from(document.querySelectorAll(selector))
+const querySelectorArrs = (selector:string):Array<HTMLElement> => Array.from(document.querySelectorAll(selector))
 
 /** switch theme */
 const switchTheme = (theme:string) => {

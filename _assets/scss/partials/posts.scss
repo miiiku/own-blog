@@ -73,8 +73,15 @@
   }
 
   .post-title {
-    display: inline-block;
-    font-size: var(--font-common-size);
+    a {
+      font-weight: bolder;
+      font-size: var(--font-common-size);
+      transition: transitions(color);
+
+      &:hover {
+        color: var(--theme-text-active);
+      }
+    }
   }
 }
 

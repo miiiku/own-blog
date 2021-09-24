@@ -23,8 +23,8 @@ window.addEventListener('DOMContentLoaded', () => {
   document.body.addEventListener('mousemove', e => {
     const moveStartX = startPointKanban[0]
     const moveStartY = startPointKanban[1]
-    const rateX = (e.clientX - moveStartX) / viewW
-    const rateY = (e.clientY - moveStartY) / viewH
+    const rateX = (e.clientX - moveStartX) / viewW || 0
+    const rateY = (e.clientY - moveStartY) / viewH || 0
     document.documentElement.style.setProperty('--kanban-offset-x', rateX + '')
     document.documentElement.style.setProperty('--kanban-offset-y', rateY + '')
   })
@@ -43,8 +43,8 @@ window.addEventListener('DOMContentLoaded', () => {
   bannerContainer.addEventListener('mousemove', e => {
     const moveStartX = startPointBanner[0]
     const moveStartY = startPointBanner[1]
-    const rateX = (e.clientX - moveStartX) / viewW
-    const rateY = (e.clientY - moveStartY) / viewH
+    const rateX = (e.clientX - moveStartX) / viewW || 0
+    const rateY = (e.clientY - moveStartY) / viewH || 0
     document.documentElement.style.setProperty('--banner-offset-x', rateX + '')
     document.documentElement.style.setProperty('--banner-offset-y', rateY + '')
   })

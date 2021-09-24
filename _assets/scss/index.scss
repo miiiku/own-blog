@@ -175,6 +175,7 @@
     min-height: var(--sticky-height-defalut);
     flex-grow: 0;
     flex-shrink: 0;
+    pointer-events: none;
   
     &.actice {
       position: sticky;
@@ -203,9 +204,12 @@
     }
   
     .sticky-title {
+      margin: 0;
       width: 100%;
       overflow: hidden;
       text-overflow: ellipsis;
+      font-size: inherit;
+      letter-spacing: inherit;
     }
   }
 

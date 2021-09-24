@@ -2,6 +2,7 @@
 $light-bg-primary: #f5f8fa;
 $light-bg-stress: #F8F8F8;
 $light-bg-nav: #FFFFFF;
+$light-bg-code: #2f495e;
 
 $light-text-active: #5C527F;
 $light-text-link: #6E85B2;
@@ -20,12 +21,13 @@ $light-border-svg: url("/images/border-light.svg");
 $dark-bg-primary: #222831;
 $dark-bg-stress: #222831;
 $dark-bg-nav: #1F252D;
+$dark-bg-code: #31373C;
 
 $dark-text-active: #EB1616;
 $dark-text-link: #F05454;
 $dark-text-light: #d7dfe6;
 $dark-text-primary: #BEBEBE;
-$dark-text-low: #B4A5A5;
+$dark-text-low: #8c8c8c;
 $dark-text-stress: #EAEAEA;
 
 $dark-border-primary: #2E3642;
@@ -37,6 +39,7 @@ $dark-border-svg: url("/images/border-dark.svg");
   --theme-bg-primary: #{$light-bg-primary};
   --theme-bg-stress: #{$light-bg-stress};
   --theme-bg-nav: #{$light-bg-nav};
+  --theme-bg-code: #{$light-bg-code};
 
   --theme-text-active: #{$light-text-active};
   --theme-text-link: #{$light-text-link};
@@ -55,6 +58,7 @@ $dark-border-svg: url("/images/border-dark.svg");
   --theme-bg-primary: #{$dark-bg-primary};
   --theme-bg-stress: #{$dark-bg-stress};
   --theme-bg-nav: #{$dark-bg-nav};
+  --theme-bg-code: #{$dark-bg-code};
 
   --theme-text-active: #{$dark-text-active};
   --theme-text-link: #{$dark-text-link};
@@ -74,6 +78,7 @@ $dark-border-svg: url("/images/border-dark.svg");
     --theme-bg-primary: #{$light-bg-primary};
     --theme-bg-stress: #{$light-bg-stress};
     --theme-bg-nav: #{$light-bg-nav};
+    --theme-bg-code: #{$light-bg-code};
 
     --theme-text-active: #{$light-text-active};
     --theme-text-link: #{$light-text-link};
@@ -94,6 +99,7 @@ $dark-border-svg: url("/images/border-dark.svg");
     --theme-bg-primary: #{$dark-bg-primary};
     --theme-bg-stress: #{$dark-bg-stress};
     --theme-bg-nav: #{$dark-bg-nav};
+    --theme-bg-code: #{$dark-bg-code};
 
     --theme-text-active: #{$dark-text-active};
     --theme-text-link: #{$dark-text-link};
