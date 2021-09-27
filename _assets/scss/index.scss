@@ -3,8 +3,7 @@
 @import './partials/posts.scss';
 
 :root {
-  --layout-side-width: 45%;
-  --layout-main-width: 680px;
+  --layout-side-width: 50%;
   --layout-main-max-width: 80%;
   --sticky-height-defalut: 180px;
   --sticky-height-active: 48px;
@@ -27,8 +26,8 @@
       display: flex;
     
       .side-nav {
-        width: 30%;
-        min-width: 120px;
+        width: 140px;
+        min-width: 90px;
         height: 100%;
         display: flex;
         flex-direction: column;
@@ -196,8 +195,7 @@
     .sticky-inner {
       display: flex;
       align-items: center;
-      width: 680px;
-      max-width: 80%;
+      max-width: var(--layout-main-max-width);
       height: 100%;
       margin: auto;
       overflow: hidden;
@@ -215,7 +213,7 @@
 
   /** 右侧主要内容区域 */
   .section-main {
-    width: var(--layout-main-width);
+    width: 100%;
     max-width: var(--layout-main-max-width);
     margin: auto;
     flex: 1;
@@ -229,8 +227,7 @@
       align-items: center;
       justify-content: flex-start;
       gap: 36px;
-      width: 680px;
-      max-width: 80%;
+      max-width: var(--layout-main-max-width);
     
       font-weight: bolder;
       font-family: var(--time-font);

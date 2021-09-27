@@ -33,7 +33,7 @@ window.addEventListener('DOMContentLoaded', function () {
 
   headerBack.addEventListener('click', e => {
     e.preventDefault()
-    if (history.length > 2) {
+    if (history.length >= 2) {
       history.back()
     } else {
       window.location.href = window.location.origin
