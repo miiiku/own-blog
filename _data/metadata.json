@@ -21,5 +21,9 @@
     "title": "阿姨，快点呀阿姨",
     "origin": "https://sukoshi.xyz"
   },
-  "beian": "蜀ICP备15014309号"
+  "beian": "蜀ICP备15014309号",
+  "analytics": {
+    "baidu": "77cce6624f1114785af5e77d00cbf93c",
+    "google": "G-GS74WZSLFF"
+  }
 }

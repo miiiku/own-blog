@@ -1,0 +1,36 @@
+
+{%- if metadata.analytics.baidu %}
+<!-- baidu analytics -->
+<script type="application/javascript">
+  (function() {
+    if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+      return console.log("本地调试，未加载baidu analytics代码");
+    }
+    const s = document.getElementsByTagName("script")[0]; 
+    const hm = document.createElement("script");
+    hm.src = "https://hm.baidu.com/hm.js?{{ metadata.analytics.baidu }}";
+    s.parentNode.insertBefore(hm, s);
+  })();
+</script>
+{% endif %}
+
+{% if metadata.analytics.google %}
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script type="application/javascript">
+  (function () {
+    if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+      return console.log("本地调试，未加载google analytics代码");
+    }
+    const s = document.getElementsByTagName("script")[0]; 
+    const hm = document.createElement("script");
+    hm.src = "https://www.googletagmanager.com/gtag/js?id={{ metadata.analytics.google }}"
+    hm.async = true;
+    s.parentNode.insertBefore(hm, s);
+    
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', '{{ metadata.analytics.google }}');
+  })();
+</script>
+{% endif %}
