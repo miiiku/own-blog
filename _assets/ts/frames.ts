@@ -2,6 +2,7 @@ window.addEventListener('DOMContentLoaded', function () {
   const headerContainer:HTMLElement = document.querySelector('.header-container')
   const headerBack:HTMLElement = document.querySelector('.header-back')
   const headerTitle:HTMLElement = document.querySelector('.header-title')
+  const items:HTMLElement[] = querySelectorArrs('.part-item')
   const titles:HTMLElement[] = querySelectorArrs('.part-item .part-item__title')
   
   const headerH:number = headerContainer.clientHeight
@@ -26,10 +27,27 @@ window.addEventListener('DOMContentLoaded', function () {
     })
     headerTitle.style.transform = `translate3d(0, ${(firstVisibleIndex - 1) * -100}%, 0)`
   }, observeOpt)
-  
-  titles.forEach(titleElement => {
-    titleObserver.observe(titleElement)
+
+  const itemObserver = new IntersectionObserver(function (entries, observer) {
+    entries.forEach(function ({ target, isIntersecting }) {
+      const el: HTMLElement = target as HTMLElement
+      if (isIntersecting) {
+        el.classList.add('visible')
+        el.classList.remove('hidden')
+      } else {
+        el.classList.add('hidden')
+        el.classList.remove('visible')
+        el.style['contain-intrinsic-size'] = `0px ${el.dataset.height}px`
+      }
+    })
   })
+
+  items.forEach(itemElement => {
+    itemElement.dataset.height = String(itemElement.offsetHeight)
+    itemObserver.observe(itemElement)
+  })
+
+  titles.forEach(titleElement => titleObserver.observe(titleElement))
 
   headerBack.addEventListener('click', e => {
     e.preventDefault()

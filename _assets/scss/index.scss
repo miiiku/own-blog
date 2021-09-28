@@ -254,13 +254,6 @@
     padding: var(--content-primary-padding);
   
     .footer-content {
-      background:
-        radial-gradient(circle at 10px -7px, transparent 8px, var(--theme-border-primary) 8px, var(--theme-border-primary) 10px, transparent 10px) repeat-x,
-        radial-gradient(circle at 10px 27px, transparent 8px, var(--theme-border-primary) 8px, var(--theme-border-primary) 10px, transparent 10px) repeat-x;
-      background-size: 20px 20px;
-      // background-position: -10px calc(100% + 16px), 0 calc(100% - 4px);
-      background-position: 0 10px, -10px -9px;
-
       font-weight: bolder;
       color: var(--theme-text-low);
   
@@ -268,6 +261,23 @@
         text-transform: uppercase;
         padding-top: var(--content-primary-padding);
         font-size: var(--font-stress-size);
+      }
+      
+      .theme-item {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+
+        svg {
+          display: block;
+          width: var(--font-base-size);
+          height: var(--font-base-size);
+          fill: currentColor;
+        }
+
+        &:not(:last-child) {
+          margin-right: 12px;
+        }
       }
   
       a {

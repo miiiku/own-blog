@@ -5,8 +5,8 @@
   padding: 20px;
   top: 0;
   left: 0;
+  z-index: 9;
   background-color: var(--theme-bg-primary);
-  // background-color: rgba($color: #ffffff, $alpha: 0.4);
   border-bottom: 1px solid var(--theme-border-primary);
 
   .header-nav {
@@ -55,6 +55,18 @@
 
   .part-item {
     margin-bottom: 20px;
+    transform: translate3d(0, 0, 0);
+
+    &.hidden {
+      content-visibility: hidden;
+      /* when hidden, we want the element to size as if it had one child of 0x500px size */
+      contain-intrinsic-size: 0 500px;
+    }
+    &.visible {
+      content-visibility: visible;
+      /* this is here to avoid layout shift when switching between .hidden and .visible */
+      contain: content;
+    }
   }
 
   .part-item__grid {
@@ -70,6 +82,7 @@
       border: 1px solid var(--theme-border-primary);
 
       img {
+        width: 100%;
         border-radius: 4px;
         overflow: hidden;
         margin: 0;
