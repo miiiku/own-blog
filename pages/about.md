@@ -1,6 +1,6 @@
 ---
 title: 关于
-layout: "layouts/about.njk"
+layout: "pages/about.njk"
 permalink: /about/
 ---
 

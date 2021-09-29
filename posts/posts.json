@@ -1,4 +1,4 @@
 {
-  "layout": "layouts/post.njk",
+  "layout": "pages/post.njk",
   "permalink": "posts/{{ page.date | linkDate }}/index.html"
 }

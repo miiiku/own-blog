@@ -1,5 +1,5 @@
 {
-  "url": "https://sukoshi.xyz/",
+  "baseUrl": "/",
   "title": "Sukoshi - 鹿角",
   "hitokoto": "( ╹╹ )  ( #╹╹# )  (◍ ╹╹ ◍)  (〃╹╹〃)  (*╹ ╹*)  ( # ì  í # )  \\( ╹╹ )\/",
   "keywords": ["hiyori", "个人博客", "鹿角", "主题"],
@@ -12,12 +12,12 @@
     "avatar": "https://s.gravatar.com/avatar/7b5a0b07a98895278cfa862b1f32ae8f?s=200&r=g&d=retro"
   },
   "homeBanner": {
-    "url": "/images/home-banner.jpeg",
+    "url": "https://qiniu.sukoshi.xyz/src/images/home-banner.jpeg@webp",
     "title": "给阿姨倒一杯卡布奇诺",
     "origin": "https://sukoshi.xyz"
   },
-  "siderBanner": {
-    "url": "/images/sider-banner.jpeg",
+  "mainBanner": {
+    "url": "https://qiniu.sukoshi.xyz/src/images/main-banner.jpeg@webp",
     "title": "阿姨，快点呀阿姨",
     "origin": "https://sukoshi.xyz"
   },

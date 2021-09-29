@@ -1,11 +1,15 @@
 ---
-title: 标签
-permalink: /tags/
 layout: layouts/base.njk
 templateClass: tmpl-tags
 ---
 
 <div class="tags-section">
+  {% if content %}
+  <div class="links-content">
+    {{ content | safe }}
+  </div>
+  {% endif%}
+  
   <div class="tags-list">
   {% for key, tag in collections %}
     {% if key !== 'all' and key !== 'posts' %}

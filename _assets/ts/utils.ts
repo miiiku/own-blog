@@ -32,3 +32,26 @@ const switchTheme = (theme:string) => {
 
   window.localStorage.setItem('theme', theme)
 }
+
+/** is touch device */
+const isTouchDevice = ():boolean => {
+  if (window.DeviceOrientationEvent && window.DeviceOrientationEvent.requestPermission) {
+    return true
+  }
+  return false
+}
+
+/** request gyro */
+const requestGyro = ():Promise<unknown> => {
+  return new Promise((resolve, reject) => {
+    window.DeviceOrientationEvent.requestPermission().then(state => {
+      if (state === 'granted') {
+        resolve(true)
+      } else {
+        reject(false)
+      }
+    }).catch(error => {
+      reject(error)
+    })
+  })
+}
