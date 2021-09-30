@@ -15,29 +15,23 @@ window.addEventListener('DOMContentLoaded', () => {
   let startPointBanner:Array<number> = [0, 0]
 
   if (isTouchDevice()) {
-    alert("移动设备")
-    const btn = document.createElement('button')
-    btn.innerText = "click me!"
-    btn.onclick = function () {
-      requestGyro().then(() => {
-        window.addEventListener('deviceorientation', ({ beta, gamma }) => {
-          const moveStartX = startPointKanban[0]
-          const moveStartY = startPointKanban[1]
-  
-          if (beta >  70) beta =  70
-          if (beta < -70) beta = -70
-          if (gamma >  70) gamma =  70
-          if (gamma < -70) gamma = -70
-  
-          const rateX = (beta - moveStartX) / 180 || 0
-          const rateY = (gamma - moveStartY) / 180 || 0
-          
-          document.documentElement.style.setProperty('--kanban-offset-x', rateX + '')
-          document.documentElement.style.setProperty('--kanban-offset-y', rateY + '')
-        })
+    // requestGyro().then(() => {
+      window.addEventListener('deviceorientation', ({ beta, gamma }) => {
+        const moveStartX = startPointKanban[0]
+        const moveStartY = startPointKanban[1]
+
+        if (beta >  70) beta =  70
+        if (beta < -70) beta = -70
+        if (gamma >  60) gamma =  60
+        if (gamma < -60) gamma = -60
+
+        const rateX = (gamma - moveStartX) / 180 || 0
+        const rateY = (beta  - moveStartY) / 180 || 0
+        
+        document.documentElement.style.setProperty('--kanban-offset-x', rateX + '')
+        document.documentElement.style.setProperty('--kanban-offset-y', rateY + '')
       })
-    }
-    document.body.appendChild(btn)
+    // })
   } else {
     document.body.addEventListener('mouseenter', e => {
       startPointKanban = [e.clientX, e.clientY]

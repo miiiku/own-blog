@@ -1,0 +1,107 @@
+---
+title: 测试
+permalink: /test/
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --offset-x: 0;
+      --offset-y: 0;
+    }
+
+    .image-container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 20px 0;
+      height: 40vh;
+      width: 100%;
+      overflow: hidden;
+    }
+
+    .image-container img {
+      display: block;
+      width: 120%;
+      height: 120%;
+      object-fit: cover;
+
+      transform: translate3d(
+        calc(var(--offset-x) * 40px),
+        calc(var(--offset-y) * 60px), 0);
+    }
+  </style>
+</head>
+<body>
+  <p>x(beta): <span id="x">0</span></p>
+  <p>y(gamma): <span id="y">0</span></p>
+  <p>z(alpha): <span id="z">0</span></p>
+  <p>support: <span id="support"></span></p>
+  <p>promsie: <span id="promsie"></span></p>
+  <p>state: <span id="state"></span></p>
+
+  <button onclick="handleClick()">click me</button>
+
+  <div class="image-container">
+    <img src="https://qiniu.sukoshi.xyz/src/images/home-banner.jpeg@webp" alt="Sukoshi - 鹿角">
+  </div>
+
+  <script>
+    function handleClick () {
+      if (window.DeviceMotionEvent.requestPermission) {
+        window.DeviceMotionEvent.requestPermission().then(state => {
+          StateText.innerText = state
+        })
+      }
+    }
+
+    const xText = document.querySelector('#x');
+    const yText = document.querySelector('#y');
+    const zText = document.querySelector('#z');
+    const SupportText = document.querySelector('#support');
+    const StateText = document.querySelector('#state');
+    const PromseText = document.querySelector('#promsie');
+
+    const startPoint = [0, 0]
+
+    PromseText.innerHTML = window.DeviceOrientationEvent.requestPermission;
+
+    if (window.DeviceOrientationEvent) {
+      SupportText.innerText = "true"
+      window.addEventListener('deviceorientation', ({ beta, gamma, alpha }) => {
+        xText.innerText = beta
+        yText.innerText = gamma
+        zText.innerText = alpha
+
+        const moveStartX = startPoint[0]
+        const moveStartY = startPoint[1]
+
+        if (beta >  70) beta =  70
+        if (beta < -70) beta = -70
+        if (gamma >  60) gamma =  60
+        if (gamma < -60) gamma = -60
+
+        const rateX = (gamma - moveStartY) / 180 || 0
+        const rateY = (beta  - moveStartX) / 180 || 0
+        
+        document.documentElement.style.setProperty('--offset-x', rateX + '')
+        document.documentElement.style.setProperty('--offset-y', rateY + '')
+      }, false)
+    } else {
+      SupportText.innerText = "false"
+    }
+  </script>
+</body>
+</html>
