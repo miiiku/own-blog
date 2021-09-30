@@ -52,29 +52,17 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addWatchTarget("_assets/scss/");
   eleventyConfig.addWatchTarget("_assets/ts/");
 
-  // move public source
-  eleventyConfig.addPassthroughCopy({ "public": "/" })
-  // move assets/images
+  eleventyConfig.addPassthroughCopy({ "public": "/" });
   eleventyConfig.addPassthroughCopy({ "_assets/images": "images" });
 
-  // Add custom collection
   eleventyConfig.addCollection("posts", function (collectionApi) {
     return collectionApi.getFilteredByGlob('posts/*.md')
   });
 
-  // Add date filter
-  eleventyConfig.addFilter("textDate", dateObj => {
-    return dayjs(dateObj).format('MMM DD, YYYY')
-  });
-
-  eleventyConfig.addFilter("htmlDate", dateObj => {
-    return dayjs(dateObj).format('YYYY-MM-DD HH:mm:ss')
-  });
-
-  eleventyConfig.addFilter("linkDate", dateObj => {
-    return dayjs(dateObj).format('YYYY/MM/DD/HHmmss')
-  })
-
+  // filter
+  eleventyConfig.addFilter("textDate", dateObj => dayjs(dateObj).format('MMM DD, YYYY'));
+  eleventyConfig.addFilter("htmlDate", dateObj => dayjs(dateObj).format('YYYY-MM-DD HH:mm:ss'));
+  eleventyConfig.addFilter("linkDate", dateObj => dayjs(dateObj).format('YYYY/MM/DD/HHmmss'));
   eleventyConfig.addFilter("slugify", input => {
     return slugify(input, {
       replacement: "-",

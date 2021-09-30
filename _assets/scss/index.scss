@@ -232,16 +232,18 @@
       font-weight: bolder;
       font-family: var(--time-font);
       font-size: var(--font-common-size);
-    
-      span {
-        color: var(--theme-text-low);
-      }
+      color: var(--theme-text-low);
     
       svg {
         display: block;
         width: 20px;
         height: 20px;
-        fill: var(--theme-text-primary);
+        fill: currentColor;
+        transition: transitions(fill);
+        
+        &:hover {
+          fill: var(--theme-text-primary);
+        }
       }
     }
   }

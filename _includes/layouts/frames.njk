@@ -18,7 +18,7 @@
 
     <title>{{ title or metadata.title }}</title>
 
-    <link href="{{ '/style/frames.css' | url }}" rel="stylesheet">
+    <link href="{{ environment.baseUrl + 'style/frames.css' | url }}" rel="stylesheet">
     <link rel="alternate" href="{{ metadata.feed.path | url }}" type="application/atom+xml" title="{{ metadata.title }}">
     <link rel="alternate" href="{{ metadata.jsonfeed.path | url }}" type="application/json" title="{{ metadata.title }}">
   </head>
@@ -58,7 +58,7 @@
       </div>
     </div>
     {% include "partials/commont.html" %}
-    <script src="/script/utils.js"></script>
-    <script src="/script/frames.js"></script>
+    <script src="{{ environment.baseUrl + 'script/utils.js' }}"></script>
+    <script src="{{ environment.baseUrl + 'script/frames.js' }}"></script>
   </body>
 </html>

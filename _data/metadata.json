@@ -1,5 +1,4 @@
 {
-  "baseUrl": "/",
   "title": "Sukoshi - 鹿角",
   "hitokoto": "( ╹╹ )  ( #╹╹# )  (◍ ╹╹ ◍)  (〃╹╹〃)  (*╹ ╹*)  ( # ì  í # )  \\( ╹╹ )\/",
   "keywords": ["hiyori", "个人博客", "鹿角", "主题"],
@@ -13,12 +12,12 @@
   },
   "homeBanner": {
     "url": "https://qiniu.sukoshi.xyz/src/images/home-banner.jpeg@webp",
-    "title": "给阿姨倒一杯卡布奇诺",
+    "title": "I Go Solo",
     "origin": "https://sukoshi.xyz"
   },
   "mainBanner": {
     "url": "https://qiniu.sukoshi.xyz/src/images/main-banner.jpeg@webp",
-    "title": "阿姨，快点呀阿姨",
+    "title": "Get set, Go!",
     "origin": "https://sukoshi.xyz"
   },
   "beian": "蜀ICP备15014309号",
