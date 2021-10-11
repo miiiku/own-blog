@@ -25,8 +25,8 @@
   background-image: url('/images/home.png');
   background-repeat: no-repeat;
   background-position:
-    right calc(50px + var(--kanban-offset-x) * 25px)
-    bottom calc(-5px + var(--kanban-offset-y) * 5px);
+    right calc(50px + var(--kanban-offset-x) * 8px)
+    bottom calc(-5px + var(--kanban-offset-y) * 8px);
   background-size: 40%;
   pointer-events: none;
   transition: background-position 0.3s ease;
@@ -136,8 +136,8 @@
     align-items: center;
     transition: transform 0.3s ease;
     transform: translate3d(
-      calc(var(--banner-offset-x) * 20px),
-      calc(var(--banner-offset-y) * 60px), 0);
+      calc(var(--banner-offset-x) * 10px),
+      calc(var(--banner-offset-y) * 20px), 0);
 
     img {
       position: absolute;
@@ -159,8 +159,8 @@
     pointer-events: none;
     transition: transform 0.3s ease;
     transform: translate3d(
-      calc(var(--banner-offset-x) * 15px),
-      calc(var(--banner-offset-y) * 15px), 0);
+      calc(var(--banner-offset-x) * 8px),
+      calc(var(--banner-offset-y) * 8px), 0);
   }
 }
 
